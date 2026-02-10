@@ -2,6 +2,12 @@
 
 A link aggregation hub for FiveM resources, documentation, and community support servers. Built with TanStack Start and deployed on Cloudflare Workers.
 
+[![Build status](https://github.com/CodeMeAPixel/FixFX-LinkInBio/actions/workflows/test-build.yml/badge.svg)](https://github.com/CodeMeAPixel/FixFX-LinkInBio/actions)
+[![Lint status](https://github.com/CodeMeAPixel/FixFX-LinkInBio/actions/workflows/validate-linting.yml/badge.svg)](https://github.com/CodeMeAPixel/FixFX-LinkInBio/actions)
+[![Format status](https://github.com/CodeMeAPixel/FixFX-LinkInBio/actions/workflows/validate-formatting.yml/badge.svg)](https://github.com/CodeMeAPixel/FixFX-LinkInBio/actions)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE)
+[![Deployed on Cloudflare Workers](https://img.shields.io/badge/Deployed%20on-Cloudflare%20Workers-orange.svg)](https://workers.cloudflare.com/)
+
 ## Features
 
 - **Categorized Links**: Organize resources into community, documentation, tools, and support server categories
@@ -116,15 +122,15 @@ The site will be available at `https://your-project.workers.dev`.
 
 ### Custom Domain
 
-To use a custom domain, update `wrangler.toml`:
+To use a custom domain, update `wrangler.jsonc`:
 
-```toml
+```jsonc
 routes = [
   { pattern = "links.fixfx.wiki", zone_name = "fixfx.wiki" }
 ]
 ```
 
-Then redeploy.
+Then redeploy. See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions.
 
 ## Technology Stack
 
@@ -133,7 +139,7 @@ Then redeploy.
 - **Styling**: Tailwind CSS v4
 - **Icons**: Lucide React
 - **Build Tool**: Vite with TanStack Start plugin
-- **Deployment**: Cloudflare Workers (Nitro)
+- **Deployment**: Cloudflare Workers
 - **Utilities**: clsx, tailwind-merge
 
 ## Browser Support
@@ -143,7 +149,31 @@ Modern browsers with ES2020+ support:
 - Firefox 88+
 - Safari 14+
 
+## Contributing
+
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+- Setting up your development environment
+- Code style and standards
+- Commit conventions
+- Testing requirements
+- Deployment process
+
+## Code of Conduct
+
+This project is committed to providing a welcoming and inclusive environment. Please review our [Code of Conduct](CODE_OF_CONDUCT.md) before participating.
+
+## Security
+
+For security concerns and vulnerability reporting, please see [SECURITY.md](SECURITY.md). **Do not** open public issues for security vulnerabilities.
+
 ## License
 
-MIT
+This project is licensed under the [GNU Affero General Public License v3](../LICENSE) (AGPL-3.0). See the LICENSE file for details.
+
+## Contact
+
+Questions or suggestions? Reach out:
+- **Email**: [hey@codemeapixel.dev](mailto:hey@codemeapixel.dev)
+- **GitHub**: [CodeMeAPixel/FixFX-LinkInBio](https://github.com/CodeMeAPixel/FixFX-LinkInBio)
+- **Site**: [https://links.fixfx.wiki](https://links.fixfx.wiki)
 
