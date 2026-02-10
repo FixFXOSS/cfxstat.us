@@ -45,6 +45,15 @@ export const profile: LinkHubProfile = {
             featured: true,
         },
 		{
+            id: 'cfx-status',
+            title: "CFX.re Status",
+            url: "https://status.cfx.re",
+            icon: "/fivem.png",
+            description: "Check for any outages in the FiveM/RedM Services.",
+            color: "bg-pink-500",
+            featured: true,
+        },
+		{
 			id: "discord",
 			title: "Join our Discord",
 			url: "https://discord.gg/cYauqJfnNK",
