@@ -1,5 +1,3 @@
-import { AlertTriangle, Home, RefreshCw } from "lucide-react";
-
 export function GlobalError() {
 	return (
 		<html lang="en" className="dark">

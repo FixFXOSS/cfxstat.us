@@ -2,7 +2,6 @@ import { HeadContent, Scripts, createRootRoute, Outlet } from "@tanstack/react-r
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { GlobalError } from "@/components/GlobalError";
 
 import appCss from "../styles.css?url";
 
