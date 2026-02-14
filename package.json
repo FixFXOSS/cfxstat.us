@@ -1,17 +1,17 @@
 {
-  "name": "links.fixfx.wiki",
-  "description": "A curated collection of useful links related to FixFX, including documentation, community resources, and tools.",
+  "name": "fixfx-status",
+  "description": "Unofficial status page for Cfx.re services — tracking FiveM, RedM, and related infrastructure in real time.",
   "author": "CodeMeAPixel <https://github.com/CodeMeAPixel>",
   "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CodeMeAPixel/FixFX-LinkInBio.git"
+    "url": "https://github.com/CodeMeAPixel/fixfx-status.git"
   },
   "bugs": {
     "email": "hey@codemeapixel.dev",
-    "url": "https://github.com/CodeMeAPixel/FixFX-LinkInBio/issues"
+    "url": "https://github.com/CodeMeAPixel/fixfx-status/issues"
   },
-  "homepage": "https://links.fixfx.wiki",
+  "homepage": "https://status.fixfx.wiki",
   "type": "module",
   "scripts": {
     "dev": "vite dev --port 3000",
@@ -29,7 +29,7 @@
     "@tanstack/react-devtools": "^0.7.0",
     "@tanstack/react-router": "^1.132.0",
     "@tanstack/react-router-devtools": "^1.132.0",
-    "@tanstack/react-start": "^1.132.0",
+    "@tanstack/react-start": "^1.159.5",
     "@tanstack/router-plugin": "^1.132.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.561.0",

@@ -24,25 +24,25 @@ export const Route = createRootRoute({
 				content: "width=device-width, initial-scale=1",
 			},
 			{
-				title: "Links | FixFX",
+				title: "FixFX Status | The unofficial Cfx.re Service Monitor",
 			},
 			{
 				name: "description",
 				content:
-					"FixFX — Your comprehensive resource for FiveM development. Documentation, guides, native references, and community tools.",
+					"Unofficial real time status page for Cfx.re services monitor FiveM, RedM, Forum, Keymaster, and more.",
 			},
 			{
 				name: "theme-color",
-				content: "#0a0a0b",
+				content: "#0a0a0f",
 			},
 			{
 				property: "og:title",
-				content: "Links | FixFX",
+				content: "FixFX Status | The unofficial Cfx.re Service Monitor",
 			},
 			{
 				property: "og:description",
 				content:
-					"Your comprehensive resource for FiveM development — documentation, guides, native references, and community tools.",
+					"Real time monitoring of Cfx.re / FiveM / RedM infrastructure. See what's up, what's down, and response times.",
 			},
 			{
 				property: "og:type",
@@ -50,7 +50,7 @@ export const Route = createRootRoute({
 			},
 			{
 				property: "og:url",
-				content: "https://links.fixfx.wiki",
+				content: "https://status.fixfx.wiki",
 			},
 			{
 				property: "og:image",
@@ -70,12 +70,12 @@ export const Route = createRootRoute({
 			},
 			{
 				name: "twitter:title",
-				content: "Links | FixFX",
+				content: "FixFX Status | The unofficial Cfx.re Service Monitor",
 			},
 			{
 				name: "twitter:description",
 				content:
-					"Your comprehensive resource for FiveM development — documentation, guides, native references, and community tools.",
+					"Real time monitoring of Cfx.re / FiveM / RedM infrastructure. See what's up, what's down, and response times.",
 			},
 			{
 				name: "twitter:image",

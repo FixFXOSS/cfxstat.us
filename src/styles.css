@@ -181,3 +181,15 @@ img {
   user-select: none;
   -webkit-touch-callout: none;
 }
+
+/* ===== Status-specific ===== */
+@keyframes statusPing {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-status-ping {
+  animation: statusPing 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
