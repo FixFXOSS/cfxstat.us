@@ -1,5 +1,5 @@
-import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowLeft, Activity } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Activity, ArrowLeft } from "lucide-react";
 import { BackgroundEffects } from "@/components/ui/BackgroundEffects";
 
 export const Route = createFileRoute("/$")({
@@ -27,8 +27,8 @@ function NotFoundPage() {
 							Page Not Found
 						</h2>
 						<p className="text-gray-400 text-lg max-w-md mx-auto">
-							The page you're looking for doesn't exist. Head back to the
-							status dashboard.
+							The page you're looking for doesn't exist. Head back to the status
+							dashboard.
 						</p>
 					</div>
 
@@ -36,13 +36,13 @@ function NotFoundPage() {
 					<div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
 						<Link
 							to="/"
-						className="group relative px-8 py-4 rounded-xl bg-linear-to-r from-blue-500 to-cyan-500 text-white font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:scale-105 w-full sm:w-auto"
-					>
-						<div className="relative z-10 flex items-center justify-center gap-2">
-							<Activity size={20} />
-							<span>View Status</span>
-						</div>
-						<div className="absolute inset-0 bg-linear-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+							className="group relative px-8 py-4 rounded-xl bg-linear-to-r from-blue-500 to-cyan-500 text-white font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(59,130,246,0.4)] hover:scale-105 w-full sm:w-auto"
+						>
+							<div className="relative z-10 flex items-center justify-center gap-2">
+								<Activity size={20} />
+								<span>View Status</span>
+							</div>
+							<div className="absolute inset-0 bg-linear-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 						</Link>
 
 						<button

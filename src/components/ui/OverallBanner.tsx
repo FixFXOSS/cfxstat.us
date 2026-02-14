@@ -48,10 +48,7 @@ export function OverallBanner({
 						)}
 					/>
 					<span
-						className={cn(
-							"relative inline-flex h-8 w-8 rounded-full",
-							cfg.dot,
-						)}
+						className={cn("relative inline-flex h-8 w-8 rounded-full", cfg.dot)}
 					/>
 				</div>
 

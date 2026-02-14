@@ -1,4 +1,9 @@
-export type ServiceStatus = "operational" | "degraded" | "partial" | "major" | "unknown";
+export type ServiceStatus =
+	| "operational"
+	| "degraded"
+	| "partial"
+	| "major"
+	| "unknown";
 
 export interface ServiceEndpoint {
 	/** Unique identifier */

@@ -1,5 +1,5 @@
-import { Link, type ErrorComponentProps } from "@tanstack/react-router";
-import { Home, RefreshCw, AlertTriangle } from "lucide-react";
+import { type ErrorComponentProps, Link } from "@tanstack/react-router";
+import { AlertTriangle, Home, RefreshCw } from "lucide-react";
 import { BackgroundEffects } from "@/components/ui/BackgroundEffects";
 
 export function ErrorBoundary({ error, reset }: ErrorComponentProps) {
@@ -66,7 +66,7 @@ export function ErrorBoundary({ error, reset }: ErrorComponentProps) {
 							<div className="relative z-10 flex items-center justify-center gap-2">
 								<RefreshCw size={20} />
 								<span>Try Again</span>
-							</div>          
+							</div>
 							<div className="absolute inset-0 bg-linear-to-r from-blue-600 to-cyan-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 						</button>
 

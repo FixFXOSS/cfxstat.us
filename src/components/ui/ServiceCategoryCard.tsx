@@ -1,18 +1,18 @@
+import {
+	Box,
+	Boxes,
+	ChevronDown,
+	ChevronUp,
+	Gamepad2,
+	Server,
+	ShieldCheck,
+	ShoppingBag,
+	Zap,
+} from "lucide-react";
+import { useState } from "react";
 import type { CategoryResult, ServiceResult } from "@/types/status";
 import { cn } from "@/utils/cn";
 import { StatusBadge, statusConfig } from "./StatusBadge";
-import {
-	Server,
-	Gamepad2,
-	Box,
-	Boxes,
-	ShoppingBag,
-	ShieldCheck,
-	Zap,
-	ChevronDown,
-	ChevronUp,
-} from "lucide-react";
-import { useState } from "react";
 
 const iconMap: Record<string, React.ElementType> = {
 	Server,
@@ -47,7 +47,9 @@ function ServiceRow({ service }: ServiceRowProps) {
 	return (
 		<div className="flex items-center justify-between gap-4 rounded-lg px-4 py-3 transition-colors hover:bg-white/2">
 			<div className="flex items-center gap-3 min-w-0">
-				<span className={cn("flex h-2.5 w-2.5 rounded-full shrink-0", cfg.dot)} />
+				<span
+					className={cn("flex h-2.5 w-2.5 rounded-full shrink-0", cfg.dot)}
+				/>
 				<span className="text-sm font-medium text-gray-200 truncate">
 					{service.name}
 				</span>

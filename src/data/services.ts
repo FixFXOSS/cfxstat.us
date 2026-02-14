@@ -30,7 +30,7 @@ export const serviceCategories: ServiceCategory[] = [
 				description: "FiveM main website",
 				acceptRange: true,
 			},
-   {
+			{
 				id: "www-redm",
 				name: "www.redm.net",
 				url: "https://www.redm.net",
@@ -97,7 +97,7 @@ export const serviceCategories: ServiceCategory[] = [
 				url: "https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/",
 				description: "runtime.fivem.net — Linux builds",
 			},
-   {
+			{
 				id: "blacklist-nui",
 				name: "NUI Blacklist",
 				url: "https://runtime.fivem.net/nui-blacklist.json",

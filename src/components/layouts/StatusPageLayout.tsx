@@ -1,11 +1,11 @@
-import { useState, useCallback, useEffect, useRef } from "react";
-import type { StatusSummary } from "@/types/status";
+import { Clock, Loader2, RefreshCw } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { StatusFooter } from "@/components/StatusFooter";
+import { StatusHeader } from "@/components/StatusHeader";
+import { BackgroundEffects } from "@/components/ui/BackgroundEffects";
 import { OverallBanner } from "@/components/ui/OverallBanner";
 import { ServiceCategoryCard } from "@/components/ui/ServiceCategoryCard";
-import { StatusHeader } from "@/components/StatusHeader";
-import { StatusFooter } from "@/components/StatusFooter";
-import { BackgroundEffects } from "@/components/ui/BackgroundEffects";
-import { RefreshCw, Clock, Loader2 } from "lucide-react";
+import type { StatusSummary } from "@/types/status";
 import { cn } from "@/utils/cn";
 
 /** Auto-refresh interval: 5 minutes. */

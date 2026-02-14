@@ -1,11 +1,11 @@
 import type {
+	CategoryResult,
+	ServiceCategory,
 	ServiceEndpoint,
 	ServiceResult,
 	ServiceStatus,
-	CategoryResult,
 	StatusSummary,
 } from "@/types/status";
-import type { ServiceCategory } from "@/types/status";
 
 /** Per-request timeout: 15 seconds. */
 const TIMEOUT_MS = 15_000;
@@ -40,9 +40,8 @@ async function withConcurrency<T>(
 		}
 	}
 
-	const workers = Array.from(
-		{ length: Math.min(limit, fns.length) },
-		() => worker(),
+	const workers = Array.from({ length: Math.min(limit, fns.length) }, () =>
+		worker(),
 	);
 	await Promise.all(workers);
 	return results;
@@ -160,7 +159,7 @@ async function checkEndpoint(svc: ServiceEndpoint): Promise<ServiceResult> {
 
 			// Timeouts and network errors are retryable
 			if (attempt < MAX_RETRIES) {
-					// Retry on next iteration
+				// Retry on next iteration
 			}
 		}
 	}
