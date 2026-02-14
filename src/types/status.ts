@@ -15,6 +15,8 @@ export interface ServiceEndpoint {
 	expectedStatus?: number;
 	/** Accept partial matches, e.g. 2xx */
 	acceptRange?: boolean;
+	/** Custom response validator — if provided, overrides status code checks */
+	validateResponse?: (status: number, body: string) => boolean;
 }
 
 export interface ServiceCategory {

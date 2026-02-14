@@ -30,6 +30,13 @@ export const serviceCategories: ServiceCategory[] = [
 				description: "FiveM main website",
 				acceptRange: true,
 			},
+   {
+				id: "www-redm",
+				name: "www.redm.net",
+				url: "https://www.redm.net",
+				description: "RedM main website",
+				acceptRange: true,
+			},
 			{
 				id: "forum",
 				name: "Cfx.re Forum",
@@ -70,13 +77,6 @@ export const serviceCategories: ServiceCategory[] = [
 				description: "Live server listing ingress",
 				acceptRange: true,
 			},
-			{
-				id: "nui-nucleus",
-				name: "Nucleus (NUI)",
-				url: "https://nui-nucleus.cfx.re/",
-				description: "Nucleus NUI callback services",
-				acceptRange: true,
-			},
 		],
 	},
 	{
@@ -87,15 +87,22 @@ export const serviceCategories: ServiceCategory[] = [
 		services: [
 			{
 				id: "runtime-win",
-				name: "Windows Server Artifacts",
+				name: "Windows Artifacts",
 				url: "https://runtime.fivem.net/artifacts/fivem/build_server_windows/master/",
 				description: "runtime.fivem.net — Windows builds",
 			},
 			{
 				id: "runtime-linux",
-				name: "Linux Server Artifacts",
+				name: "Linux Artifacts",
 				url: "https://runtime.fivem.net/artifacts/fivem/build_proot_linux/master/",
 				description: "runtime.fivem.net — Linux builds",
+			},
+   {
+				id: "blacklist-nui",
+				name: "NUI Blacklist",
+				url: "https://runtime.fivem.net/nui-blacklist.json",
+				description: "NUI Blacklist Policy",
+				acceptRange: true,
 			},
 			{
 				id: "changelogs",
@@ -120,7 +127,7 @@ export const serviceCategories: ServiceCategory[] = [
 		services: [
 			{
 				id: "marketplace",
-				name: "Tebex / Marketplace",
+				name: "Marketplace",
 				url: "https://marketplace.cfx.re",
 				description: "Official UGC marketplace",
 			},
@@ -155,21 +162,14 @@ export const serviceCategories: ServiceCategory[] = [
 			{
 				id: "lambda",
 				name: "Lambda",
-				url: "https://lambda.fivem.net/",
+				url: "https://lambda.fivem.net",
 				description: "lambda.fivem.net — validation endpoint",
-				acceptRange: true,
-			},
-			{
-				id: "policy-live",
-				name: "Policy Service",
-				url: "https://policy-live.fivem.net/api/policy",
-				description: "policy-live.fivem.net",
 				acceptRange: true,
 			},
 			{
 				id: "idms",
 				name: "IDMS",
-				url: "https://idms.fivem.net",
+				url: "https://idms.fivem.net/.well-known/openid-configuration",
 				description: "idms.fivem.net — identity management",
 				acceptRange: true,
 			},
@@ -200,13 +200,6 @@ export const serviceCategories: ServiceCategory[] = [
 				name: "Crash Ingress",
 				url: "https://crash-ingress.fivem.net",
 				description: "crash-ingress.fivem.net — crash reporting",
-				acceptRange: true,
-			},
-			{
-				id: "storage",
-				name: "Storage",
-				url: "https://storage.fivem.net",
-				description: "storage.fivem.net — object storage",
 				acceptRange: true,
 			},
 		],

@@ -18,7 +18,7 @@ Please be respectful and constructive in all interactions. We're building a welc
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/CodeMeAPixel/FixFX-LinkInBio.git
+   git clone https://github.com/FixFXOSS/cfxstat.us.git
    cd links.fixfx.wiki
    ```
 
@@ -130,7 +130,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 ## Reporting Issues
 
 Found a bug or have a feature request? Please:
-1. Check if the issue already exists on [GitHub Issues](https://github.com/CodeMeAPixel/FixFX-LinkInBio/issues)
+1. Check if the issue already exists on [GitHub Issues](https://github.com/FixFXOSS/cfxstat.us/issues)
 2. Provide clear description and steps to reproduce bugs
 3. Include your environment (OS, Node version, browser if applicable)
 
@@ -159,7 +159,7 @@ src/
 
 Feel free to reach out:
 - Email: [hey@codemeapixel.dev](mailto:hey@codemeapixel.dev)
-- GitHub: [CodeMeAPixel/FixFX-LinkInBio](https://github.com/CodeMeAPixel/FixFX-LinkInBio)
+- GitHub: [FixFXOSS/cfxstat.us](https://github.com/FixFXOSS/cfxstat.us)
 
 ## License
 

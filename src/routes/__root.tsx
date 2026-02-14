@@ -50,7 +50,7 @@ export const Route = createRootRoute({
 			},
 			{
 				property: "og:url",
-				content: "https://status.fixfx.wiki",
+				content: "https://cfxstat.us",
 			},
 			{
 				property: "og:image",

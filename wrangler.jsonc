@@ -7,7 +7,8 @@
   "main": "@tanstack/react-start/server-entry",
   
   "routes": [
-    { "pattern": "status.fixfx.wiki", "custom_domain": true }
+    { "pattern": "cfxstat.us", "custom_domain": true },
+    { "pattern": "www.cfxstat.us", "custom_domain": true }
   ],
 
   "vars": {

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/api/status")({
 				const summary = await checkAllServices(serviceCategories);
 				return Response.json(summary, {
 					headers: {
-						"Cache-Control": "public, max-age=30, s-maxage=30",
+						"Cache-Control": "public, max-age=120, s-maxage=300",
 					},
 				});
 			},

@@ -2,7 +2,7 @@
 
 ## Reporting Security Vulnerabilities
 
-If you discover a security vulnerability in FixFX Links, please **do not** open a public GitHub issue. Instead, please report it responsibly to:
+If you discover a security vulnerability in FixFX, please **do not** open a public GitHub issue. Instead, please report it responsibly to:
 
 **Email:** [hey@codemeapixel.dev](mailto:hey@codemeapixel.dev)
 
@@ -100,7 +100,7 @@ When responsibly disclosing vulnerabilities:
 
 For security-related questions or concerns, please contact:
 - **Email:** [hey@codemeapixel.dev](mailto:hey@codemeapixel.dev)
-- **GitHub:** [CodeMeAPixel/FixFX-LinkInBio](https://github.com/CodeMeAPixel/FixFX-LinkInBio)
+- **GitHub:** [FixFXOSS/cfxstat.us](https://github.com/FixFXOSS/cfxstat.us)
 
 ## Acknowledgments
 

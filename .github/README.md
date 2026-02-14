@@ -2,9 +2,9 @@
 
 Unofficial real-time status page for Cfx.re services — monitors FiveM, RedM, Forum, Keymaster, Marketplace, and related infrastructure. Built with TanStack Start and deployed on Cloudflare Workers.
 
-[![Build status](https://github.com/CodeMeAPixel/fixfx-status/actions/workflows/test-build.yml/badge.svg)](https://github.com/CodeMeAPixel/fixfx-status/actions)
-[![Lint status](https://github.com/CodeMeAPixel/fixfx-status/actions/workflows/validate-linting.yml/badge.svg)](https://github.com/CodeMeAPixel/fixfx-status/actions)
-[![Format status](https://github.com/CodeMeAPixel/fixfx-status/actions/workflows/validate-formatting.yml/badge.svg)](https://github.com/CodeMeAPixel/fixfx-status/actions)
+[![Build status](https://github.com/FixFXOSS/cfxstat.us/actions/workflows/test-build.yml/badge.svg)](https://github.com/FixFXOSS/cfxstat.us/actions)
+[![Lint status](https://github.com/FixFXOSS/cfxstat.us/actions/workflows/validate-linting.yml/badge.svg)](https://github.com/FixFXOSS/cfxstat.us/actions)
+[![Format status](https://github.com/FixFXOSS/cfxstat.us/actions/workflows/validate-formatting.yml/badge.svg)](https://github.com/FixFXOSS/cfxstat.us/actions)
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](LICENSE)
 [![Deployed on Cloudflare Workers](https://img.shields.io/badge/Deployed%20on-Cloudflare%20Workers-orange.svg)](https://workers.cloudflare.com/)
 
@@ -13,8 +13,8 @@ Unofficial real-time status page for Cfx.re services — monitors FiveM, RedM, F
 - **Live Service Monitoring**: Probes Cfx.re endpoints and reports status in real time
 - **Categorised Services**: Core Platform, Game Services, Runtime & Builds, Marketplace, Auth & APIs
 - **Response Times**: Per-service latency with colour-coded indicators
-- **Auto Refresh**: Client auto-refreshes every 60 seconds, manual refresh button available
-- **Server-Side Rendering**: Initial status is fetched on the server for instant page load
+- **Auto Refresh**: Client auto-refreshes every 5 minutes, manual refresh button available
+- **Client-Side Fetching**: Status is fetched on the client for instant page load with loading skeleton
 - **API Endpoint**: `/api/status` returns JSON for programmatic consumption
 - **Responsive Design**: Dark-themed glassmorphic UI optimised for all screen sizes
 
@@ -71,9 +71,13 @@ Edit `src/data/services.ts` to add or modify monitored endpoints:
   name: "My Service",
   url: "https://example.com/health",
   description: "Optional description",
-  method: "GET",          // GET | HEAD | POST (default: GET)
-  expectedStatus: 200,    // default: 200
-  acceptRange: false,     // accept any 2xx/3xx (default: false)
+  method: "GET",              // GET | HEAD | POST (default: GET)
+  expectedStatus: 200,        // default: 200
+  acceptRange: false,         // accept any 2xx/3xx (default: false)
+  validateResponse: (status, body) => {  // custom validation (optional)
+    const json = JSON.parse(body);
+    return json.status === "ok";
+  },
 }
 ```
 
@@ -93,7 +97,7 @@ wrangler login
 bun run deploy
 ```
 
-The site will be available at `https://status.fixfx.wiki`.
+The site will be available at `https://cfxstat.us`.
 
 ## Technology Stack
 
@@ -128,6 +132,6 @@ This project is licensed under the [GNU Affero General Public License v3](../LIC
 ## Contact
 
 - **Email**: [hey@codemeapixel.dev](mailto:hey@codemeapixel.dev)
-- **GitHub**: [CodeMeAPixel/fixfx-status](https://github.com/CodeMeAPixel/fixfx-status)
-- **Site**: [https://status.fixfx.wiki](https://status.fixfx.wiki)
+- **GitHub**: [FixFXOSS/cfxstat.us](https://github.com/FixFXOSS/cfxstat.us)
+- **Site**: [https://cfxstat.us](https://cfxstat.us)
 

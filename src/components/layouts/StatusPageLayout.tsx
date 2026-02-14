@@ -1,16 +1,15 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import type { StatusSummary } from "@/types/status";
 import { OverallBanner } from "@/components/ui/OverallBanner";
 import { ServiceCategoryCard } from "@/components/ui/ServiceCategoryCard";
 import { StatusHeader } from "@/components/StatusHeader";
 import { StatusFooter } from "@/components/StatusFooter";
 import { BackgroundEffects } from "@/components/ui/BackgroundEffects";
-import { RefreshCw, Clock } from "lucide-react";
+import { RefreshCw, Clock, Loader2 } from "lucide-react";
 import { cn } from "@/utils/cn";
 
-interface StatusPageLayoutProps {
-	initialData: StatusSummary;
-}
+/** Auto-refresh interval: 5 minutes. */
+const REFRESH_INTERVAL_MS = 5 * 60 * 1000;
 
 function timeSince(iso: string): string {
 	const diff = Date.now() - new Date(iso).getTime();
@@ -22,20 +21,21 @@ function timeSince(iso: string): string {
 	return `${Math.floor(mins / 60)}h ago`;
 }
 
-export default function StatusPageLayout({
-	initialData,
-}: StatusPageLayoutProps) {
-	const [data, setData] = useState<StatusSummary>(initialData);
+export default function StatusPageLayout() {
+	const [data, setData] = useState<StatusSummary | null>(null);
 	const [refreshing, setRefreshing] = useState(false);
-	const [lastRefreshLabel, setLastRefreshLabel] = useState("just now");
+	const [lastRefreshLabel, setLastRefreshLabel] = useState("loading…");
+	const initialFetchDone = useRef(false);
 
 	// Keep the "Xm ago" label ticking
 	useEffect(() => {
 		const interval = setInterval(() => {
-			setLastRefreshLabel(timeSince(data.lastChecked));
+			if (data?.lastChecked) {
+				setLastRefreshLabel(timeSince(data.lastChecked));
+			}
 		}, 5_000);
 		return () => clearInterval(interval);
-	}, [data.lastChecked]);
+	}, [data?.lastChecked]);
 
 	const refresh = useCallback(async () => {
 		setRefreshing(true);
@@ -51,9 +51,17 @@ export default function StatusPageLayout({
 		}
 	}, []);
 
-	// Auto-refresh every 60s
+	// Fetch on mount (client-side, non-blocking)
 	useEffect(() => {
-		const interval = setInterval(refresh, 60_000);
+		if (!initialFetchDone.current) {
+			initialFetchDone.current = true;
+			refresh();
+		}
+	}, [refresh]);
+
+	// Auto-refresh every 5 minutes
+	useEffect(() => {
+		const interval = setInterval(refresh, REFRESH_INTERVAL_MS);
 		return () => clearInterval(interval);
 	}, [refresh]);
 
@@ -65,44 +73,54 @@ export default function StatusPageLayout({
 				<StatusHeader />
 
 				<main className="flex-1 mx-auto w-full max-w-4xl px-4 py-8 md:px-6 md:py-12 space-y-8">
-					{/* Overall banner */}
-					<OverallBanner
-						status={data.overall}
-						operationalCount={data.operationalCount}
-						totalServices={data.totalServices}
-					/>
-
-					{/* Toolbar */}
-					<div className="flex items-center justify-between">
-						<div className="flex items-center gap-2 text-xs text-gray-500">
-							<Clock size={14} />
-							<span>Last checked {lastRefreshLabel}</span>
+					{!data ? (
+						/* Loading skeleton — shown on first paint */
+						<div className="flex flex-col items-center justify-center py-20 gap-4">
+							<Loader2 size={32} className="animate-spin text-blue-400" />
+							<p className="text-sm text-gray-400">Checking services…</p>
 						</div>
-
-						<button
-							type="button"
-							onClick={refresh}
-							disabled={refreshing}
-							className={cn(
-								"flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all",
-								"border-white/8 bg-white/3 text-gray-400 hover:text-white hover:border-white/15",
-								refreshing && "opacity-50 cursor-not-allowed",
-							)}
-						>
-							<RefreshCw
-								size={14}
-								className={refreshing ? "animate-spin" : ""}
+					) : (
+						<>
+							{/* Overall banner */}
+							<OverallBanner
+								status={data.overall}
+								operationalCount={data.operationalCount}
+								totalServices={data.totalServices}
 							/>
-							{refreshing ? "Checking…" : "Refresh"}
-						</button>
-					</div>
 
-					{/* Service categories */}
-					<div className="space-y-4">
-						{data.categories.map((cat) => (
-							<ServiceCategoryCard key={cat.id} category={cat} />
-						))}
-					</div>
+							{/* Toolbar */}
+							<div className="flex items-center justify-between">
+								<div className="flex items-center gap-2 text-xs text-gray-500">
+									<Clock size={14} />
+									<span>Last checked {lastRefreshLabel}</span>
+								</div>
+
+								<button
+									type="button"
+									onClick={refresh}
+									disabled={refreshing}
+									className={cn(
+										"flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-xs font-medium transition-all",
+										"border-white/8 bg-white/3 text-gray-400 hover:text-white hover:border-white/15",
+										refreshing && "opacity-50 cursor-not-allowed",
+									)}
+								>
+									<RefreshCw
+										size={14}
+										className={refreshing ? "animate-spin" : ""}
+									/>
+									{refreshing ? "Checking…" : "Refresh"}
+								</button>
+							</div>
+
+							{/* Service categories */}
+							<div className="space-y-4">
+								{data.categories.map((cat) => (
+									<ServiceCategoryCard key={cat.id} category={cat} />
+								))}
+							</div>
+						</>
+					)}
 				</main>
 
 				<StatusFooter />

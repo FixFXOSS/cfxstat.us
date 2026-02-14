@@ -8,23 +8,22 @@ export function StatusFooter() {
 					<p className="flex items-center gap-1">
 						Made with <Heart size={12} className="text-red-400" /> by{" "}
 						<a
-							href="https://fixfx.wiki"
+							href="https://codemeapixel.dev"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-gray-400 hover:text-white transition-colors underline underline-offset-2"
 						>
-							FixFX
+							CodeMeAPixel
 						</a>
 					</p>
 
 					<p className="text-center text-gray-600">
-						This is an unofficial status page. Not affiliated with Cfx.re /
-						Rockstar Games.
+						Not affiliated with Cfx.re / Rockstar Games.
 					</p>
 
 					<a
 						href="https://github.com/CodeMeAPixel/fixfx-status"
-						target="_blank"
+						target="_blank"FixFXOSS/cfxstat.
 						rel="noopener noreferrer"
 						className="flex items-center gap-1.5 text-gray-400 hover:text-white transition-colors"
 					>

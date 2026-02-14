@@ -2,7 +2,7 @@
 
 ## Our Commitment
 
-FixFX Links is committed to providing a welcoming, inclusive, and harassment-free environment for all contributors and community members, regardless of:
+FixFX is committed to providing a welcoming, inclusive, and harassment-free environment for all contributors and community members, regardless of:
 - Age, body size, disability, ethnicity, gender identity and expression
 - Level of experience, nationality, personal appearance
 - Race, religion, sexual identity and orientation

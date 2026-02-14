@@ -2,4 +2,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://status.fixfx.wiki/sitemap.xml
+Sitemap: https://cfxstat.us/sitemap.xml

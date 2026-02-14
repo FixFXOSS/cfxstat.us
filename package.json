@@ -1,17 +1,17 @@
 {
-  "name": "fixfx-status",
+  "name": "cfxstat.us",
   "description": "Unofficial status page for Cfx.re services — tracking FiveM, RedM, and related infrastructure in real time.",
-  "author": "CodeMeAPixel <https://github.com/CodeMeAPixel>",
+  "author": "FixFXOSS <https://github.com/FixFXOSS>",
   "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CodeMeAPixel/fixfx-status.git"
+    "url": "https://github.com/FixFXOSS/cfxstat.us.git"
   },
   "bugs": {
     "email": "hey@codemeapixel.dev",
-    "url": "https://github.com/CodeMeAPixel/fixfx-status/issues"
+    "url": "https://github.com/FixFXOSS/cfxstat.us/issues"
   },
-  "homepage": "https://status.fixfx.wiki",
+  "homepage": "https://cfxstat.us",
   "type": "module",
   "scripts": {
     "dev": "vite dev --port 3000",

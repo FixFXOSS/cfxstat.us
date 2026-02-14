@@ -32,4 +32,20 @@
     <feColorMatrix type="saturate" values="0"/>
   </filter>
   <rect width="2560" height="720" filter="url(#noise)" opacity="0.03"/>
+
+  <!-- Centered heartbeat pulse -->
+  <defs>
+    <linearGradient id="pulse" x1="880" y1="360" x2="1680" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#3b82f6"/>
+      <stop offset="80%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="pulseGlow"><feGaussianBlur in="SourceGraphic" stdDeviation="5"/><feComposite in="SourceGraphic"/></filter>
+  </defs>
+  <polyline points="880,360 1080,360 1140,280 1280,440 1340,360 1680,360"
+    fill="none" stroke="url(#pulse)" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"
+    filter="url(#pulseGlow)" opacity="0.2"/>
+  <polyline points="880,360 1080,360 1140,280 1280,440 1340,360 1680,360"
+    fill="none" stroke="url(#pulse)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
 </svg>
